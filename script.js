@@ -60,13 +60,6 @@ function holdDice() {
         setTimeout(() => {
             location.reload()
         }, 1000);
-        // // window.location.reload()
-        // if (highestNumberCount1 === currentPlayer) {
-
-        //     alert('Player 1 Won the game')
-        // } else {
-        //     alert('Player 2 Wonthe game')
-        // }
     }
 
 
