@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DICE GAME</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <h1>DICE GAME</h1>
+    <section id="game_view">
+        <div class="board" id="player1_board">
+            <h2 id="player1">
+                Player 1
+            </h2>
+            <div class="number_bank1" id="highest_number_count1">0
+            </div>
+            <div class="number_bank1" id="dice_number_count1">0
+            </div>
+        </div>
+        <div id="line"></div>
+        <div id="dice">
+            <div class="dot dot1"></div>
+            <div class="dot dot2"></div>
+            <div class="dot dot3"></div>
+            <div class="dot dot4"></div>
+            <div class="dot dot5"></div>
+            <div class="dot dot6"></div>
+        </div>
+        <div id="roll">Roll</div>
+        <div id="hold">Hold</div>
+        <div class="board" id="player2_board">
+            <h2 id="player2">
+                Player 2
+            </h2>
+            <div class="number_bank2" id="highest_number_count2">0
+            </div>
+            <div class="number_bank2" id="dice_number_count2">0
+            </div>
+        </div>
+    </section>
+    <footer>
+        <input type="number" name="limit_setter" class="limit_setter" id="limit">
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

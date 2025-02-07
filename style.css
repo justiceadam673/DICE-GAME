@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: .7;
+}
+
+body,
+html {
+    background: #202020;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    margin: auto;
+    text-align: center;
+    background: #f4f4f4;
+    width: 50%;
+    height: 60%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    color: #202020;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5), -10px -10px 20px rgba(0, 0, 0, 0.5), /* Outside shadow */
+    inset 10px 10px 20px rgba(0, 0, 0, 0.4), inset -5px -5px 20px rgba(0, 0, 0, 0.4);
+    /* Inside shadow */
+}
+
+#game_view {
+    position: relative;
+    margin: auto;
+    background: #f4f4f4;
+    color: #202020;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100vw;
+    height: 100vh;
+    width: 50%;
+    height: 60%;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5), -10px -10px 20px rgba(0, 0, 0, 0.5), /* Outside shadow */
+    inset 10px 10px 20px rgba(0, 0, 0, 0.4), inset -5px -5px 20px rgba(0, 0, 0, 0.4);
+    /* Inside shadow */
+}
+
+.number_bank1,
+.number_bank2 {
+    border: 1px solid #000;
+    padding: 1.7rem;
+    width: 5%;
+    height: 5%;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+#highest_number_count1,
+#highest_number_count2 {
+    margin-top: 2rem;
+}
+
+#dice_number_count1,
+#dice_number_count2 {
+    margin-top: 5rem;
+}
+
+#line,
+#dice,
+#roll,
+#hold {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    box-shadow: 1px 1px 10px rgba(20, 20, 20, 0.5), -1px -1px 10px rgba(100, 100, 100, 0.5), /* Outside shadow */
+    inset 5px 5px 5px rgba(100, 100, 100, 0.4), inset -5px -5px 5px rgba(30, 30, 30, 0.4);
+    /* Inside shadow */
+}
+
+#line {
+    border: 1px solid #000;
+    height: 100%;
+}
+
+#dice {
+    border: 1px solid #000;
+    padding: 2rem .5rem;
+    top: 25%;
+    left: 45%;
+    right: 45%;
+    background: #f4f4f4;
+}
+
+#roll {
+    border: 1px solid #000;
+    padding: 1.5rem .5rem;
+    top: 50%;
+    left: 45%;
+    right: 45%;
+    background: #f4f4f4;
+    cursor: pointer;
+}
+
+#hold {
+    border: 1px solid #000;
+    padding: 1.5rem .5rem;
+    top: 75%;
+    left: 45%;
+    right: 45%;
+    background: #f4f4f4;
+    cursor: pointer;
+}
+
+#dice {
+    width: 70px;
+    height: 70px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    background: white;
+    border-radius: 10px;
+    position: absolute;
+    top: 25%;
+    left: 45%;
+    right: 45%;
+    padding: 10px;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    background: black;
+    border-radius: 50%;
+    visibility: hidden;
+}
+
+
+/* Dice face configurations */
+
+.show-1 .dot1 {
+    visibility: visible;
+}
+
+
+/* Center */
+
+.show-2 .dot2,
+.show-2 .dot5 {
+    visibility: visible;
+}
+
+
+/* Diagonal */
+
+.show-3 .dot1,
+.show-3 .dot3,
+.show-3 .dot5 {
+    visibility: visible;
+}
+
+
+/* Diagonal + Center */
+
+.show-4 .dot2,
+.show-4 .dot4,
+.show-4 .dot3,
+.show-4 .dot5 {
+    visibility: visible;
+}
+
+
+/* Four corners */
+
+.show-5 .dot1,
+.show-5 .dot2,
+.show-5 .dot3,
+.show-5 .dot4,
+.show-5 .dot5 {
+    visibility: visible;
+}
+
+
+/* Four corners + center */
+
+.show-6 .dot2,
+.show-6 .dot3,
+.show-6 .dot4,
+.show-6 .dot5,
+.show-6 .dot6,
+.show-6 .dot1 {
+    visibility: visible;
+}
+
+.limit_setter {
+    background: #f4f4f4;
+    position: fixed;
+    left: 35%;
+    margin-top: .7rem;
+    border: none;
+    text-align: center;
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    box-shadow: 1px 1px 10px rgba(20, 20, 20, 0.5), -1px -1px 10px rgba(100, 100, 100, 0.5), /* Outside shadow */
+    inset 5px 5px 5px rgba(100, 100, 100, 0.4), inset -5px -5px 5px rgba(30, 30, 30, 0.4);
+}
+
+.limit_setter:focus {
+    outline: none;
+}
+
+
+/* Three on each side */
